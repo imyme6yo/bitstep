@@ -333,10 +333,19 @@
       btn2.addEventListener('click', ()=> {
         modal.classList.replace('show', 'dismiss');
         // window.open(filename, "_blank");
-        const vcard = "BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%EC%9D%B4%EC%84%9C%EC%A4%80%3B%3B%3B%3B%0AFN%3A%EC%9D%B4%EC%84%9C%EC%A4%80%0ATEL%3BTYPE%3DCELL%2CVOICE%3A010-2861-0486%0AORG%3A%EB%B9%84%ED%8A%B8%EC%8A%A4%ED%85%9D%0ATITLE%3A%EB%8C%80%ED%91%9C%0APRODID%3A-%2F%2FApple%20Inc.%2F%2FiCloud%20Web%20Address%20Book%2017A37%2F%2FEN%0AEMAIL%3BTYPE%3DPREF%3Ahi%40bitstep.it%0AURL%3BWORK%3Ahttps%3A%2F%2Fbitstep.it%0AEND%3AVCARD";
-        window.open("data:text/x-vcard;urlencoded,"+vcard);
-        // link.click();
-        // link.remove();
+        // const vcard = "BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%EC%9D%B4%EC%84%9C%EC%A4%80%3B%3B%3B%3B%0AFN%3A%EC%9D%B4%EC%84%9C%EC%A4%80%0ATEL%3BTYPE%3DCELL%2CVOICE%3A010-2861-0486%0AORG%3A%EB%B9%84%ED%8A%B8%EC%8A%A4%ED%85%9D%0ATITLE%3A%EB%8C%80%ED%91%9C%0APRODID%3A-%2F%2FApple%20Inc.%2F%2FiCloud%20Web%20Address%20Book%2017A37%2F%2FEN%0AEMAIL%3BTYPE%3DPREF%3Ahi%40bitstep.it%0AURL%3BWORK%3Ahttps%3A%2F%2Fbitstep.it%0AEND%3AVCARD";
+        // window.open("data:text/x-vcard;urlencoded,"+vcard);
+        try {
+          // console.log(Intent);
+          let intent = new Intent(Intent.ACTION_VIEW, Uri.parse(filename));
+          console.log(intent);
+          intent.setType("text/vcard");
+          startActivity(intent);
+
+        } catch {
+          link.click();
+          link.remove();
+        }
       })
       console.log("hello");
     </script>
