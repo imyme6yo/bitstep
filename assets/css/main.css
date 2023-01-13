@@ -3058,6 +3058,11 @@ ul.social li a.fa-google-plus:hover {
   object-fit: cover;
 }
 
+.body-image {
+  width: 100%;
+  object-fit: cover;
+}
+
 .modal-container {
   position: fixed;
   top: 0;
