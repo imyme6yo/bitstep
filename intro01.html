@@ -74,9 +74,10 @@
         </h1>
       </section>
       <section
+        id="namecard"
         data-id="home"
         data-title="Home"
-        class="pt-page pt-page-home pt-page-current pt-page-relative"
+        class="pt-page pt-page-home pt-page-relative"
       >
         <div class="section-inner start-page-content">
           <div class="page-header">
@@ -115,7 +116,7 @@
                           "
                         >
                           <div class="item">
-                            <div class="sp-subtitle">개발자</div>
+                            <!-- <div class="sp-subtitle">개발자</div> -->
                           </div>
                         </div>
                         <div
@@ -135,7 +136,7 @@
                           "
                         >
                           <div class="item">
-                            <div class="sp-subtitle">개발자</div>
+                            <!-- <div class="sp-subtitle">개발자</div> -->
                           </div>
                         </div>
                         <div
@@ -290,6 +291,16 @@
         </div>
       </section>
     </div>
+    <div id="modal" class="modal-container">
+      <dialog id="modal-dialog" class="modal-dialog">
+        <p class="modal-message">클릭하여 연락처를 추가해주세요.</p>
+        <form class="modal-buttons" method="dialog">
+          <button value="cancel">취소</button>
+          <button id="btn2">연락처 추가</button>
+        </form>
+      </dialog>
+    </div>
+  </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -299,7 +310,32 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      //   window.alert("hello");
+      let link = document.createElement('a');
+      link.setAttribute('type', 'hidden');
+      link.href = '/assets/jon.vcf';
+      document.body.appendChild(link);
+      // link.click();
+      // link.remove();
+      let modal = document.getElementById("modal");
+      let dialog = document.getElementById("modal-dialog");
+      
+      let btn2 = document.getElementById("btn2");
+      let namecard = document.getElementById("namecard");
+      
+      namecard.classList.add("pt-page-current");
+      modal.classList.add('show');
+      dialog.showModal();
+
+      dialog.addEventListener('close', ()=>{
+        modal.classList.replace('show', 'dismiss');
+        console.log(modal.classList);
+      });
+      btn2.addEventListener('click', ()=> {
+        modal.classList.replace('show', 'dismiss');
+        link.click();
+        link.remove();
+      })
+      console.log("hello");
     </script>
   </body>
 </html>

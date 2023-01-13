@@ -1366,12 +1366,12 @@
 .cal-week-box .cal-column {
   position: absolute;
   height: 100%;
-  z-index: 100;
+  z-index: 50;
 }
 
 .cal-week-box .cal-row-fluid {
   position: relative;
-  z-index: 101;
+  z-index: 51;
 }
 
 .cal-week-box .arrow-before,

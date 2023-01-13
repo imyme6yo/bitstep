@@ -3057,3 +3057,49 @@ ul.social li a.fa-google-plus:hover {
   width: 171px;
   object-fit: cover;
 }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2c292980;
+  pointer-events: none;
+}
+.show {
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+}
+.dismiss {
+  height: 0;
+  width: 0;
+  z-index: 0;
+}
+
+.modal-message {
+  text-align: center;
+}
+
+.modal-dialog {
+  /* display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center; */
+  top: 100px;
+  z-index: 92;
+  pointer-events: auto;
+}
+
+.modal-buttons {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 93;
+  pointer-events: auto;
+}
+
+.modal-buttons button {
+  margin-left: 10px;
+  z-index: 94;
+  pointer-events: auto;
+}
