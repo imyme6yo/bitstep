@@ -67,17 +67,17 @@
                   <h3>AI 솔루션</h3>
                 </header>
               </section>
-              <section class="box">
+              <section class="box" id="metahuman-box">
                 <header>
                   <h3>Digital 메타휴먼 솔루션</h3>
                 </header>
               </section>
-              <section class="box">
+              <section class="box" id="da-box">
                 <header>
                   <h3>데이터 분석 솔루션</h3>
                 </header>
               </section>
-              <section class="box">
+              <section class="box" id="ai-auth-box">
                 <header>
                   <h3>실시간 AI인증</h3>
                 </header>
@@ -166,5 +166,22 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      mh = document.getElementById("metahuman-box");
+      da = document.getElementById("da-box");
+      auth = document.getElementById("ai-auth-box");
+      console.log(mh);
+      console.log(da);
+      console.log(auth);
+      mh.addEventListener("click", ()=>{
+        window.location.href = 'digital-metahuman.html';
+      });
+      da.addEventListener("click", ()=>{
+        window.location.href = 'data-analysis.html';
+      });
+      auth.addEventListener("click", ()=>{
+        window.location.href = 'realtime-ai-auth.html';
+      });
+    </script>
   </body>
 </html>
