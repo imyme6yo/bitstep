@@ -29,7 +29,7 @@ export default function ContactPage() {
     setValid(agreed && company !== "" && email !== "" && content !== "");
   }, [agreed, company, email, content]);
 
-  const makeInquery = () => {
+  const makeInquery = async () => {
     console.log(agreed);
     console.log(company);
     console.log(email);
@@ -45,7 +45,8 @@ export default function ContactPage() {
         phone,
         content,
       };
-      addDoc(col, inquiry);
+      await addDoc(col, inquiry);
+      window.location.reload();
     }
   };
 
@@ -249,7 +250,7 @@ export default function ContactPage() {
                   // type="submit"
                   className={btnStyle}
                   disabled={!valid}
-                  onClick={() => makeInquery()}
+                  onClick={async () => await makeInquery()}
                 >
                   문의하기
                 </button>
