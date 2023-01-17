@@ -37,8 +37,6 @@ export default function ContactPage() {
     console.log(content);
     if (agreed === true) {
       const firestore = getFirestore();
-      // console.log(app);
-      // console.log(db);
       const col = collection(firestore, "inquiries");
       const inquiry = {
         privacy: agreed,
@@ -245,17 +243,17 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:col-span-2">
-                  <button
-                    // type="submit"
-                    className={btnStyle}
-                    disabled={!valid}
-                    onClick={() => makeInquery()}
-                  >
-                    문의하기
-                  </button>
-                </div>
               </form>
+              <div className="sm:col-span-2">
+                <button
+                  // type="submit"
+                  className={btnStyle}
+                  disabled={!valid}
+                  onClick={() => makeInquery()}
+                >
+                  문의하기
+                </button>
+              </div>
             </div>
           </div>
         </div>

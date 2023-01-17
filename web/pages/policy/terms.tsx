@@ -11,8 +11,9 @@ const TermsPage = () => {
           <h1 className="text-xl font-bold my-3">이용약관</h1>
           <div className="text-lg font-bold my-3">제1조 목적</div>
           <div>
-            본 이용약관은 “스몰브랜더 홈페이지”(이하 "사이트")의 서비스의
-            이용조건과 운영에 관한 제반 사항 규정을 목적으로 합니다.<br></br>
+            본 이용약관은 &quot;비트스텝 사이트&quot;(이하 &quot;사이트&quot;)의
+            서비스의 이용조건과 운영에 관한 제반 사항 규정을 목적으로 합니다.
+            <br></br>
           </div>
           <div className="text-lg font-bold my-3">제2조 용어의 정의</div>
           <div className="flex flex-col gap-1">
@@ -29,8 +30,9 @@ const TermsPage = () => {
               계약을 말합니다.
             </div>
             <div>
-              ③ 회원 아이디(이하 "ID") : 회원의 식별과 회원의 서비스 이용을
-              위하여 회원별로 부여하는 고유한 문자와 숫자의 조합을 말합니다.
+              ③ 회원 아이디(이하 &quot;ID&quot;) : 회원의 식별과 회원의 서비스
+              이용을 위하여 회원별로 부여하는 고유한 문자와 숫자의 조합을
+              말합니다.
             </div>
             <div>
               ④ 비밀번호 : 회원이 부여받은 ID와 일치된 회원임을 확인하고 회원의
@@ -58,8 +60,8 @@ const TermsPage = () => {
             </div>
             <div>
               ② 회원으로 등록하여 서비스를 이용하려는 자는 사이트 가입신청 시 본
-              약관을 읽고 아래에 있는 "동의합니다"를 선택하는 것으로 본 약관에
-              대한 동의 의사 표시를 합니다.
+              약관을 읽고 아래에 있는 &quot;동의합니다&quot;를 선택하는 것으로
+              본 약관에 대한 동의 의사 표시를 합니다.
             </div>
           </div>
           <div className="text-lg my3">제5조 서비스 이용 신청</div>
