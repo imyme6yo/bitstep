@@ -24,7 +24,7 @@ add the deploy command to 'scripts' to package.json
 # git add -f web/out
 # git commit -m "deploy YYYYMMDD"
 # git subtree split -prefix web/out -b deploy
-# git -f origin deploy
+# git push -f origin deploy
 ```
 
 # clean deploy files
@@ -33,4 +33,5 @@ add the deploy command to 'scripts' to package.json
 # git checkout main
 # git branch -D tmp-deploy
 # git branch -D deploy
+# rm -rf web/out
 ```
