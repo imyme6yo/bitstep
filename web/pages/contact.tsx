@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 // import firebase from "firebase/app";
 
 import Head from "next/head";
+import Script from "next/script";
+
 import { Inter } from "@next/font/google";
 import { Switch } from "@headlessui/react";
 import { getFirestore } from "firebase/firestore";
@@ -22,13 +24,14 @@ export default function ContactPage() {
   const [content, setContent] = useState("");
   const [valid, setValid] = useState(false);
   const btnStyle =
-    "inline-flex w-full items-center justify-center rounded-md border border-transparent bg-carrot-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-carrot-700 focus:outline-none focus:ring-2 focus:ring-carrot-500 focus:ring-offset-2, disabled:bg-carrot-300";
+    "g-recaptcha inline-flex w-full items-center justify-center rounded-md border border-transparent bg-carrot-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-carrot-700 focus:outline-none focus:ring-2 focus:ring-carrot-500 focus:ring-offset-2, disabled:bg-carrot-300";
 
   useEffect(() => {
     setValid(agreed && company !== "" && email !== "" && content !== "");
   }, [agreed, company, email, content]);
 
-  const makeInquery = async () => {
+  const makeInquery = async (token: any) => {
+    console.log(token);
     if (agreed === true) {
       const firestore = getFirestore();
       const col = collection(firestore, "inquiries");
@@ -48,12 +51,8 @@ export default function ContactPage() {
     <>
       <Head>
         <title>BITSTEP - 문의하기</title>
-        <script
-          src="https://www.google.com/recaptcha/api.js"
-          async
-          defer
-        ></script>
       </Head>
+      <Script src="https://www.google.com/recaptcha/api.js"></Script>
       <main>
         <div className="overflow-hidden bg-white py-16 px-6 lg:px-8 lg:py-24">
           <div className="relative mx-auto max-w-xl">
@@ -243,16 +242,13 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <div
-                  className="g-recaptcha"
-                  data-sitekey="6LejjQYkAAAAAJo1EcGFbsHno7xs_i5oktOEnc_x"
-                ></div>
                 <div className="sm:col-span-2">
                   <button
-                    type="submit"
+                    data-sitekey="6LejjQYkAAAAAJo1EcGFbsHno7xs_i5oktOEnc_x"
+                    data-callback="onSubmit"
+                    data-action="submit"
                     className={btnStyle}
                     disabled={!valid}
-                    onClick={async () => await makeInquery()}
                   >
                     문의하기
                   </button>

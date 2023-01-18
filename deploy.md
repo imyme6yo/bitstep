@@ -23,7 +23,7 @@ add the deploy command to 'scripts' to package.json
 # git checkout -b tmp-deploy
 # git add -f web/out
 # git commit -m "deploy YYYYMMDD"
-# git subtree split -prefix web/out -b deploy
+# git subtree split --prefix web/out -b deploy
 # git push -f origin deploy
 ```
 
